@@ -1,0 +1,30 @@
+# Node.js dependencies and artifacts
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Git repository metadata
+.git
+.gitignore
+
+# Tests and development documentation
+tests
+k8s
+README.md
+
+# Secrets and local configurations
+.env
+.env.*
+*.local
+
+# IDE and OS metadata
+.idea
+.vscode
+*.swp
+.DS_Store
+Thumbs.db
+
+# CI/CD and Dockerfiles
+Dockerfile*
+.dockerignore

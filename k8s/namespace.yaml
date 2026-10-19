@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cloudsentinel-secure-demo
+  labels:
+    name: cloudsentinel-secure-demo
+    app.kubernetes.io/name: cloudsentinel-secure-demo
+    app.kubernetes.io/part-of: cloudsentinel
+    # Kubernetes Pod Security Standards (Restricted Profile)
+    pod-security.kubernetes.io/enforce: restricted
+    pod-security.kubernetes.io/enforce-version: latest
+    pod-security.kubernetes.io/audit: restricted
+    pod-security.kubernetes.io/warn: restricted

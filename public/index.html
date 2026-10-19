@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="CloudSentinel Secure Demo Application (App A) demonstrating security-gated CI/CD and hardened Kubernetes deployment.">
+  <title>CloudSentinel — Secure Demo Application</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <div class="shield-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+        </div>
+        <span class="brand-title">CloudSentinel <span class="badge badge-primary">App A</span></span>
+      </div>
+      <div class="nav-status">
+        <span class="status-indicator">
+          <span class="status-dot"></span>
+          <span id="health-label">System Healthy</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span>SECURE REFERENCE APPLICATION (APP A)</span>
+      </div>
+
+      <h1 class="hero-title" id="main-heading">CloudSentinel — Secure Demo Application</h1>
+
+      <div class="prominent-banner" id="secure-deployment-banner">
+        <div class="banner-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <div class="banner-content">
+          <div class="banner-eyebrow">VERIFIED DEPLOYMENT ATTESTATION</div>
+          <div class="banner-highlight">Deployed securely through CloudSentinel</div>
+          <div class="banner-subtext">Zero High/Critical CVEs &bull; Rootless Pod &bull; Immutable Image Digest</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metadata Grid -->
+    <section class="grid-section">
+      <div class="card meta-card">
+        <div class="card-header">
+          <span class="card-label">Application Identity</span>
+          <span class="tag">App A</span>
+        </div>
+        <div class="card-value" id="app-name">cloudsentinel-secure-demo</div>
+        <div class="card-foot">Standalone secure baseline node service</div>
+      </div>
+
+      <div class="card meta-card">
+        <div class="card-header">
+          <span class="card-label">Environment Indicator</span>
+          <span class="badge badge-success">Production / Minikube</span>
+        </div>
+        <div class="card-value" id="env-indicator">Production Cluster</div>
+        <div class="card-foot">Target Namespace: <code>cloudsentinel-secure-demo</code></div>
+      </div>
+
+      <div class="card meta-card">
+        <div class="card-header">
+          <span class="card-label">Application Version</span>
+          <span class="tag tag-blue">v1.0.0</span>
+        </div>
+        <div class="card-value" id="app-version">1.0.0</div>
+        <div class="card-foot">Node.js LTS Runtime with Helmet Security Headers</div>
+      </div>
+
+      <div class="card meta-card">
+        <div class="card-header">
+          <span class="card-label">Health & Readiness</span>
+          <span class="badge badge-success" id="health-badge">200 OK</span>
+        </div>
+        <div class="card-value status-text">
+          <span class="status-indicator-inline"></span>
+          <span>Liveness Active</span>
+        </div>
+        <div class="card-foot">Probes: <code>/health</code> &bull; <code>/ready</code> &bull; <code>/api/info</code></div>
+      </div>
+    </section>
+
+    <!-- DevSecOps Pipeline Architecture -->
+    <section class="pipeline-section">
+      <div class="section-header">
+        <h2>CloudSentinel DevSecOps Workflow</h2>
+        <p class="section-subtitle">Automated Security Gates enforced before Kubernetes cluster admission</p>
+      </div>
+
+      <div class="pipeline-grid">
+        <div class="pipeline-step">
+          <div class="step-number">01</div>
+          <div class="step-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+            </svg>
+          </div>
+          <h3>SAST Analysis</h3>
+          <p>Static Application Security Testing validates source code against vulnerabilities, code smells, and CWE patterns.</p>
+          <div class="step-status passed">Gate Passed</div>
+        </div>
+
+        <div class="pipeline-step">
+          <div class="step-number">02</div>
+          <div class="step-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            </svg>
+          </div>
+          <h3>SCA & Dependencies</h3>
+          <p>Software Composition Analysis (npm audit) prevents transitive dependency vulnerabilities and unpinned libraries.</p>
+          <div class="step-status passed">Gate Passed</div>
+        </div>
+
+        <div class="pipeline-step">
+          <div class="step-number">03</div>
+          <div class="step-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+              <line x1="6" y1="6" x2="6.01" y2="6"/>
+              <line x1="6" y1="18" x2="6.01" y2="18"/>
+            </svg>
+          </div>
+          <h3>Container Scanning</h3>
+          <p>Trivy and Hadolint inspect minimal base image layers. Zero CRITICAL/HIGH CVE threshold enforced.</p>
+          <div class="step-status passed">Gate Passed</div>
+        </div>
+
+        <div class="pipeline-step">
+          <div class="step-number">04</div>
+          <div class="step-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>Attestation & Digest</h3>
+          <p>Pipeline signs immutable OCI container digest (SHA-256). Prohibits floating <code>:latest</code> tags in production.</p>
+          <div class="step-status passed">Gate Passed</div>
+        </div>
+
+        <div class="pipeline-step">
+          <div class="step-number">05</div>
+          <div class="step-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+          </div>
+          <h3>Hardened Kubernetes</h3>
+          <p>Deployed to Minikube with non-root UID 1000, <code>readOnlyRootFilesystem</code>, dropped capabilities, and strict seccomp.</p>
+          <div class="step-status deployed">Deployed</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Endpoint Explorer -->
+    <section class="api-section">
+      <div class="section-header">
+        <h2>Live Security & Observability Endpoints</h2>
+        <p class="section-subtitle">Deterministic endpoints consumed by Kubernetes probes and CloudSentinel health monitors</p>
+      </div>
+
+      <div class="endpoint-list">
+        <div class="endpoint-row">
+          <div class="endpoint-badge get">GET</div>
+          <div class="endpoint-path"><code>/health</code></div>
+          <div class="endpoint-desc">Lightweight liveness check returning deterministic application identity</div>
+          <a class="endpoint-action" href="/health" target="_blank" rel="noopener">Query Endpoint &rarr;</a>
+        </div>
+
+        <div class="endpoint-row">
+          <div class="endpoint-badge get">GET</div>
+          <div class="endpoint-path"><code>/ready</code></div>
+          <div class="endpoint-desc">Traffic readiness probe indicating availability for serving cluster requests</div>
+          <a class="endpoint-action" href="/ready" target="_blank" rel="noopener">Query Endpoint &rarr;</a>
+        </div>
+
+        <div class="endpoint-row">
+          <div class="endpoint-badge get">GET</div>
+          <div class="endpoint-path"><code>/api/info</code></div>
+          <div class="endpoint-desc">Sanitized metadata disclosing runtime environment without secret exposure</div>
+          <a class="endpoint-action" href="/api/info" target="_blank" rel="noopener">Query Endpoint &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div>CloudSentinel DevSecOps Architecture &bull; University FYP Demonstration</div>
+      <div class="footer-sub">Secure Baseline Reference Application (App A) &bull; Hardened Container Standard</div>
+    </div>
+  </footer>
+</body>
+</html>

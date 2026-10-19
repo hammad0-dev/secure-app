@@ -1,0 +1,30 @@
+{
+  "name": "cloudsentinel-secure-demo",
+  "version": "1.0.0",
+  "description": "CloudSentinel Secure Demo Application (App A) demonstrating security-gated CI/CD and hardened Kubernetes deployment",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "node --test tests/**/*.test.js"
+  },
+  "keywords": [
+    "cloudsentinel",
+    "devsecops",
+    "secure-coding",
+    "kubernetes",
+    "demo"
+  ],
+  "author": "CloudSentinel Security Team",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "helmet": "^8.0.0"
+  },
+  "devDependencies": {
+    "supertest": "^7.0.0"
+  }
+}
