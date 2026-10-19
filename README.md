@@ -1,4 +1,4 @@
-e# CloudSentinel — Secure Demo Application (App A)
+ee# CloudSentinel — Secure Demo Application (App A)
 
 [![Node.js LTS](https://img.shields.io/badge/Node.js-20%20LTS-green.svg)](https://nodejs.org/)
 [![Security Hardened](https://img.shields.io/badge/Security-Hardened%20Container-00bcd4.svg)](#security-specifications)
